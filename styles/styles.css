@@ -1,0 +1,186 @@
+/* =============================================
+   NARDI — Hoja de estilos general
+   Paleta: gris carbón + blanco hueso + terracota
+   Tipografía: Playfair Display (títulos) + Poppins (texto)
+   =========================================== */
+
+/* ===== Variables globales ===== */
+:root {
+    --color-primary: #2C2C2C;
+    --color-secondary: #FAF6F1;
+    --color-accent: #C1694F;
+    --color-text: #2C2C2C;
+    --color-text-light: #FAF6F1;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+}
+
+/* ===== Reset básico ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== Tipografía y fondo general ===== */
+body {
+    font-family: var(--font-body);
+    font-weight: 400;
+    color: var(--color-text);
+    background-color: var(--color-secondary);
+    line-height: 1.6;
+}
+
+h1,
+h2 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Header y navegación ===== */
+.site-header {
+    background-color: var(--color-primary);
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.logo {
+    height: 48px;
+    width: auto;
+    border-radius: 4px;
+}
+
+.site-nav .nav-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: var(--color-text-light);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.nav-link:hover {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+/* ===== Contenido principal ===== */
+.site-main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.section {
+    margin-bottom: 3rem;
+}
+
+.section-intro h1 {
+    font-size: 3rem;
+}
+
+.content-list {
+    list-style: none;
+}
+
+.content-list li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #ddd6cd;
+}
+
+/* ===== Tarjetas: proyectos y pasos del proceso ===== */
+.card {
+    background-color: #ffffff;
+    border-left: 4px solid var(--color-accent);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+}
+
+.card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ===== Figuras e imágenes ===== */
+.figure {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.figure-img {
+    max-width: 100%;
+    border-radius: 6px;
+}
+
+.figure-caption {
+    margin-top: 0.8rem;
+    font-style: italic;
+    color: #6b6b6b;
+    font-size: 0.9rem;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    text-align: center;
+    padding: 2rem;
+}
+
+.footer-text {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.social-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-link {
+    color: var(--color-text-light);
+    font-weight: 600;
+}
+
+.social-link:hover {
+    color: var(--color-accent);
+}
