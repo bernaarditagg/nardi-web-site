@@ -192,3 +192,46 @@ a:hover {
 .social-link:hover {
     color: var(--color-accent);
 }
+
+/* ===== Grid responsivo (Mobile-First) =====
+   Base (sin media query): todo apilado en 1 columna, 100% del ancho,
+   gracias al display:flex / flex-direction:column ya definido arriba.
+   A partir de los 1024px de ancho, algunas secciones pasan a usar
+   CSS Grid con grid-template-areas para organizar el contenido en
+   varias columnas. */
+@media (min-width: 1024px) {
+
+    /* Grid con áreas nombradas para la portada (index.html) */
+    .site-main--home {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "hero    hero"
+            "about   services"
+            "figure  figure";
+        gap: 3rem;
+    }
+
+    .grid-hero {
+        grid-area: hero;
+    }
+
+    .grid-about {
+        grid-area: about;
+    }
+
+    .grid-services {
+        grid-area: services;
+    }
+
+    .grid-figure {
+        grid-area: figure;
+    }
+
+    /* Grid de tarjetas para nuestros-trabajos.html: pasa de 1 a 2 columnas */
+    .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
