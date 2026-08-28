@@ -2,7 +2,7 @@
    NARDI — Hoja de estilos general
    Paleta: gris carbón + blanco hueso + terracota
    Tipografía: Playfair Display (títulos) + Poppins (texto)
-   Layout: Flexbox + Box Model
+   Layout: Flexbox + Box Model + CSS Grid + Bootstrap
    ============================================ */
 
 /* ===== Reset básico (siempre primero) ===== */
@@ -17,6 +17,7 @@
     --color-primary: #2C2C2C;
     --color-secondary: #FAF6F1;
     --color-accent: #C1694F;
+    --color-accent-dark: #A8563F;
     --color-text: #2C2C2C;
     --color-text-light: #FAF6F1;
     --font-heading: 'Playfair Display', serif;
@@ -58,47 +59,53 @@ h2 {
 a {
     color: var(--color-accent);
     text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 a:hover {
     text-decoration: underline;
 }
 
-/* ===== Header y navegación ===== */
-.site-header {
+/* ===== Header y navegación (Navbar de Bootstrap con estilo propio) =====
+   Usamos el componente Navbar de Bootstrap (con su menú hamburguesa
+   responsivo incluido), pero lo reestilamos por completo para que
+   respete la paleta e identidad visual de Nardi. */
+.navbar-nardi {
     background-color: var(--color-primary);
-    padding: 1.5rem 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
+    padding: 1.2rem 2rem;
 }
 
-.logo {
+.navbar-nardi .logo {
     height: 48px;
     width: auto;
     border-radius: 4px;
 }
 
-.site-nav .nav-list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
-.nav-link {
+.navbar-nardi .nav-link {
     color: var(--color-text-light);
     font-weight: 600;
     font-size: 0.95rem;
     letter-spacing: 0.03em;
     text-transform: uppercase;
+    margin-left: 0.5rem;
+    transition: color 0.2s ease;
 }
 
-.nav-link:hover {
+.navbar-nardi .nav-link:hover,
+.navbar-nardi .nav-link:focus {
     color: var(--color-accent);
-    text-decoration: none;
+}
+
+.navbar-nardi .nav-link:active {
+    color: var(--color-accent-dark);
+}
+
+.navbar-toggler {
+    border-color: rgba(250, 246, 241, 0.4);
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(193, 105, 79, 0.5);
 }
 
 /* ===== Contenido principal (Flexbox + gap en vez de márgenes manuales) ===== */
@@ -133,17 +140,77 @@ a:hover {
     border-bottom: 1px solid #ddd6cd;
 }
 
-/* ===== Tarjetas: proyectos y pasos del proceso ===== */
+/* ===== Botones propios (por encima del estilo por defecto de Bootstrap) ===== */
+.btn-nardi {
+    display: inline-block;
+    align-self: flex-start;
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.85rem 1.75rem;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-nardi:hover {
+    background-color: var(--color-accent-dark);
+    color: var(--color-text-light);
+    text-decoration: none;
+}
+
+.btn-nardi:focus {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+    text-decoration: none;
+}
+
+.btn-nardi:active {
+    transform: scale(0.97);
+}
+
+/* ===== Tarjetas: proyectos y pasos del proceso =====
+   Las tarjetas de la galería de "Nuestros trabajos" son ahora
+   elementos clicables (enlaces), por eso definimos sus 3 estados
+   interactivos: hover, focus y active, con transition para que el
+   cambio sea suave. */
 .card {
+    display: block;
     background-color: #ffffff;
     border-left: 4px solid var(--color-accent);
     padding: 1.5rem;
     border-radius: 4px;
+    text-decoration: none;
+    color: var(--color-text);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .card h2 {
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
+}
+
+.card p {
+    margin-bottom: 0;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(44, 44, 44, 0.12);
+    text-decoration: none;
+}
+
+.card:focus {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+.card:active {
+    transform: translateY(-1px);
+    border-left-color: var(--color-primary);
 }
 
 /* ===== Figuras e imágenes ===== */
@@ -162,6 +229,21 @@ a:hover {
     font-style: italic;
     color: #6b6b6b;
     font-size: 0.9rem;
+}
+
+/* ===== Carousel de Bootstrap, reestilado con la identidad de Nardi ===== */
+.carousel-nardi {
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.carousel-nardi .carousel-indicators [data-bs-target] {
+    background-color: var(--color-accent);
+}
+
+.carousel-nardi .carousel-control-prev,
+.carousel-nardi .carousel-control-next {
+    transition: opacity 0.2s ease;
 }
 
 /* ===== Footer ===== */
@@ -187,10 +269,16 @@ a:hover {
 .social-link {
     color: var(--color-text-light);
     font-weight: 600;
+    transition: color 0.2s ease;
 }
 
-.social-link:hover {
+.social-link:hover,
+.social-link:focus {
     color: var(--color-accent);
+}
+
+.social-link:active {
+    color: var(--color-accent-dark);
 }
 
 /* ===== Grid responsivo (Mobile-First) =====
@@ -208,7 +296,7 @@ a:hover {
         grid-template-areas:
             "hero    hero"
             "about   services"
-            "figure  figure";
+            "gallery gallery";
         gap: 3rem;
     }
 
@@ -224,8 +312,8 @@ a:hover {
         grid-area: services;
     }
 
-    .grid-figure {
-        grid-area: figure;
+    .grid-gallery {
+        grid-area: gallery;
     }
 
     /* Grid de tarjetas para nuestros-trabajos.html: pasa de 1 a 2 columnas */
