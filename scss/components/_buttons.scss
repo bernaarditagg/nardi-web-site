@@ -1,0 +1,31 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+// ===== Botones propios (por encima del estilo por defecto de Bootstrap) =====
+.btn-nardi {
+    display: inline-block;
+    align-self: flex-start;
+    background-color: $color-accent;
+    color: $color-text-light;
+    @include texto-uppercase(0.9rem, 600);
+    padding: 0.85rem 1.75rem;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+
+    &:hover {
+        background-color: $color-accent-dark;
+        color: $color-text-light;
+        text-decoration: none;
+    }
+
+    &:focus {
+        outline: 3px solid $color-primary;
+        outline-offset: 2px;
+        text-decoration: none;
+    }
+
+    &:active {
+        transform: scale(0.97);
+    }
+}

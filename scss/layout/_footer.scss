@@ -1,0 +1,36 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.site-footer {
+    background-color: $color-primary;
+    color: $color-text-light;
+    text-align: center;
+    padding: 2rem;
+}
+
+.footer-text {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.social-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-link {
+    color: $color-text-light;
+    font-weight: 600;
+    @include transicion-suave(color);
+
+    &:hover,
+    &:focus {
+        color: $color-accent;
+    }
+
+    &:active {
+        color: $color-accent-dark;
+    }
+}

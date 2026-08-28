@@ -1,0 +1,42 @@
+@use '../utilities/variables' as *;
+
+// ===== Tarjetas: proyectos y pasos del proceso =====
+// Las tarjetas de la galería de "Nuestros trabajos" son ahora
+// elementos clicables (enlaces), por eso definimos sus 3 estados
+// interactivos: hover, focus y active, con transition para que el
+// cambio sea suave.
+.card {
+    display: block;
+    background-color: $color-card-bg;
+    border-left: 4px solid $color-accent;
+    padding: 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    color: $color-text;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+
+    h2 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 24px rgba(44, 44, 44, 0.12);
+        text-decoration: none;
+    }
+
+    &:focus {
+        outline: 3px solid $color-accent;
+        outline-offset: 2px;
+    }
+
+    &:active {
+        transform: translateY(-1px);
+        border-left-color: $color-primary;
+    }
+}

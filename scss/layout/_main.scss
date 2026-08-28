@@ -1,0 +1,46 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+// ===== Contenido principal (Flexbox + gap en vez de márgenes manuales) =====
+.site-main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    @include flex-column(3rem);
+}
+
+.section {
+    @include flex-column(1.5rem);
+
+    &-intro h1 {
+        font-size: 3rem;
+    }
+}
+
+.content-list {
+    list-style: none;
+    @include flex-column(0.6rem);
+
+    li {
+        padding: 0.75rem 1.25rem;
+        border-bottom: 1px solid $color-divider;
+    }
+}
+
+// ===== Figuras e imágenes =====
+.figure {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.figure-img {
+    max-width: 100%;
+    border-radius: 6px;
+}
+
+.figure-caption {
+    margin-top: 0.8rem;
+    font-style: italic;
+    color: $color-caption;
+    font-size: 0.9rem;
+}

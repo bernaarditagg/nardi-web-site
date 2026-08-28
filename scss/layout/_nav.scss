@@ -1,0 +1,41 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+// ===== Navbar de Bootstrap con estilo propio =====
+// Usamos el componente Navbar de Bootstrap (con su menú hamburguesa
+// responsivo incluido), pero lo reestilamos por completo para que
+// respete la paleta e identidad visual de Nardi.
+.navbar-nardi {
+    background-color: $color-primary;
+    padding: 1.2rem 2rem;
+
+    .logo {
+        height: 48px;
+        width: auto;
+        border-radius: 4px;
+    }
+
+    .nav-link {
+        color: $color-text-light;
+        @include texto-uppercase(0.95rem, 600);
+        margin-left: 0.5rem;
+        @include transicion-suave(color);
+
+        &:hover,
+        &:focus {
+            color: $color-accent;
+        }
+
+        &:active {
+            color: $color-accent-dark;
+        }
+    }
+}
+
+.navbar-toggler {
+    border-color: rgba(250, 246, 241, 0.4);
+
+    &:focus {
+        box-shadow: 0 0 0 3px rgba(193, 105, 79, 0.5);
+    }
+}

@@ -1,0 +1,16 @@
+@use '../utilities/variables' as *;
+
+// ===== Carousel de Bootstrap, reestilado con la identidad de Nardi =====
+.carousel-nardi {
+    border-radius: 6px;
+    overflow: hidden;
+
+    .carousel-indicators [data-bs-target] {
+        background-color: $color-accent;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        transition: opacity 0.2s ease;
+    }
+}

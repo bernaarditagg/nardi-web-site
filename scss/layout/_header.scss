@@ -1,0 +1,6 @@
+// El header en sí no necesita estilos propios: todo el diseño visual
+// del encabezado vive en el componente Navbar de Bootstrap, reestilado
+// en layout/_nav.scss (.navbar-nardi).
+.site-header {
+    width: 100%;
+}

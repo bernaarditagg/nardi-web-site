@@ -1,0 +1,20 @@
+// ============================================
+// NARDI — Hoja de estilos general (SCSS)
+// Paleta: gris carbón + blanco hueso + terracota
+// Tipografía: Playfair Display (títulos) + Poppins (texto)
+// Layout: Flexbox + Box Model + CSS Grid + Bootstrap
+//
+// Archivo maestro: solo importa partials con @use.
+// No contiene estilos propios (Zero CSS Manual).
+// ============================================
+
+@use 'base/base';
+@use 'base/tipografia';
+@use 'layout/header';
+@use 'layout/nav';
+@use 'layout/main';
+@use 'components/buttons';
+@use 'components/cards';
+@use 'components/carousel';
+@use 'layout/footer';
+@use 'layout/grid';

@@ -1,0 +1,23 @@
+// ============================================
+// Mixins reutilizables
+// ============================================
+
+// Transición suave (usada en links, nav, botones, tarjetas)
+@mixin transicion-suave($propiedades: all) {
+    transition: $propiedades 0.2s ease;
+}
+
+// Texto en mayúsculas con letter-spacing (usado en nav-links y botones)
+@mixin texto-uppercase($tamano: 0.9rem, $peso: 600) {
+    font-size: $tamano;
+    font-weight: $peso;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+// Columna flexible con gap (usada en secciones y listas)
+@mixin flex-column($gap: 1.5rem) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}

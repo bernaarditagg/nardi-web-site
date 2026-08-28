@@ -1,0 +1,40 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+// ===== Reset básico (siempre primero) =====
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// ===== Custom properties (compatibilidad con entregas anteriores) =====
+:root {
+    --color-primary: #{$color-primary};
+    --color-secondary: #{$color-secondary};
+    --color-accent: #{$color-accent};
+    --color-accent-dark: #{$color-accent-dark};
+    --color-text: #{$color-text};
+    --color-text-light: #{$color-text-light};
+    --font-heading: #{$font-heading};
+    --font-body: #{$font-body};
+}
+
+// ===== Tipografía y fondo general =====
+body {
+    font-family: $font-body;
+    font-weight: 400;
+    color: $color-text;
+    background-color: $color-secondary;
+    line-height: 1.6;
+}
+
+a {
+    color: $color-accent;
+    text-decoration: none;
+    @include transicion-suave(color);
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
