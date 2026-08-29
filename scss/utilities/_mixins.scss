@@ -27,10 +27,14 @@
 // Estados de color compartidos por varios enlaces (nav-links, social-links).
 // En vez de repetir la misma declaración en cada selector, la agrupamos
 // acá y la "extendemos" donde se necesita.
+// Nota accesibilidad: usamos $color-accent-light / $color-accent-mid
+// (y no $color-accent / $color-accent-dark) porque estos placeholders
+// se aplican como color de TEXTO sobre fondos oscuros ($color-primary),
+// y solo las variantes aclaradas alcanzan el contraste mínimo 4.5:1 (AA).
 %hover-accent {
-    color: $color-accent;
+    color: $color-accent-light;
 }
 
 %active-accent-dark {
-    color: $color-accent-dark;
+    color: $color-accent-mid;
 }

@@ -6,6 +6,13 @@ $color-primary: #2C2C2C;
 $color-secondary: #FAF6F1;
 $color-accent: #C1694F;
 $color-accent-dark: #A8563F;
+// Variantes de contraste (accesibilidad AA) para texto sobre fondo oscuro
+// y para el botón principal: el terracota "puro" (#C1694F) no llega a
+// 4.5:1 de contraste como texto sobre $color-primary, así que usamos
+// versiones aclaradas para texto y una versión más oscura para fondos.
+$color-accent-light: #D08E7B;
+$color-accent-mid: #CD8772;
+$color-accent-darker: #8B4A34;
 $color-text: #2C2C2C;
 $color-text-light: #FAF6F1;
 $color-divider: #ddd6cd;

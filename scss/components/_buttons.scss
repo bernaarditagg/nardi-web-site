@@ -2,10 +2,13 @@
 @use '../utilities/mixins' as *;
 
 // ===== Botones propios (por encima del estilo por defecto de Bootstrap) =====
+// Nota accesibilidad: el fondo base es $color-accent-dark (no $color-accent)
+// porque con texto claro ($color-text-light) recién ahí se alcanza el
+// contraste mínimo 4.5:1 (AA) exigido para texto normal.
 .btn-nardi {
     display: inline-block;
     align-self: flex-start;
-    background-color: $color-accent;
+    background-color: $color-accent-dark;
     color: $color-text-light;
     @include texto-uppercase(0.9rem, 600);
     padding: 0.85rem 1.75rem;
@@ -14,7 +17,7 @@
     transition: background-color 0.2s ease, transform 0.15s ease;
 
     &:hover {
-        background-color: $color-accent-dark;
+        background-color: $color-accent-darker;
         color: $color-text-light;
         text-decoration: none;
     }

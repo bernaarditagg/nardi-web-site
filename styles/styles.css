@@ -1,9 +1,9 @@
 .social-link:hover, .social-link:focus, .navbar-nardi .nav-link:hover, .navbar-nardi .nav-link:focus {
-  color: #C1694F;
+  color: #D08E7B;
 }
 
 .social-link:active, .navbar-nardi .nav-link:active {
-  color: #A8563F;
+  color: #CD8772;
 }
 
 * {
@@ -147,7 +147,7 @@ h2 {
 .btn-nardi {
   display: inline-block;
   align-self: flex-start;
-  background-color: #C1694F;
+  background-color: #A8563F;
   color: #FAF6F1;
   font-size: 0.9rem;
   font-weight: 600;
@@ -159,7 +159,7 @@ h2 {
   transition: background-color 0.2s ease, transform 0.15s ease;
 }
 .btn-nardi:hover {
-  background-color: #A8563F;
+  background-color: #8B4A34;
   color: #FAF6F1;
   text-decoration: none;
 }
