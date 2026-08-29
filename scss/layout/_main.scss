@@ -2,19 +2,27 @@
 @use '../utilities/mixins' as *;
 
 // ===== Contenido principal (Flexbox + gap en vez de márgenes manuales) =====
+// $spacing-unit * 2 = 3rem (uso de operador de multiplicación de Sass)
 .site-main {
     max-width: 960px;
     margin: 0 auto;
     padding: 3rem 2rem;
-    @include flex-column(3rem);
+    @include flex-column($spacing-unit * 2);
 }
 
 .section {
-    @include flex-column(1.5rem);
+    @include flex-column($spacing-unit);
 
     &-intro h1 {
         font-size: 3rem;
     }
+}
+
+// Grilla reutilizable de 2 columnas (quienes-somos.html y contacto.html).
+// Mobile-first: acá solo la base apilada; el pase a 2 columnas en
+// escritorio vive en layout/_grid.scss, junto con el resto de los grids.
+.two-col-grid {
+    @include flex-column($spacing-unit * 2);
 }
 
 .content-list {

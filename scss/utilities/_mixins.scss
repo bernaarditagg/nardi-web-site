@@ -1,6 +1,7 @@
 // ============================================
 // Mixins reutilizables
 // ============================================
+@use 'variables' as *;
 
 // Transición suave (usada en links, nav, botones, tarjetas)
 @mixin transicion-suave($propiedades: all) {
@@ -20,4 +21,16 @@
     display: flex;
     flex-direction: column;
     gap: $gap;
+}
+
+// ===== Placeholders para @extend =====
+// Estados de color compartidos por varios enlaces (nav-links, social-links).
+// En vez de repetir la misma declaración en cada selector, la agrupamos
+// acá y la "extendemos" donde se necesita.
+%hover-accent {
+    color: $color-accent;
+}
+
+%active-accent-dark {
+    color: $color-accent-dark;
 }

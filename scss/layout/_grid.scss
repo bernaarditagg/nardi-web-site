@@ -1,3 +1,5 @@
+@use '../utilities/variables' as *;
+
 // ===== Grid responsivo (Mobile-First) =====
 // Base (sin media query): todo apilado en 1 columna, 100% del ancho,
 // gracias al display:flex / flex-direction:column ya definido en _main.scss.
@@ -45,5 +47,13 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
+    }
+
+    // Grid de 2 columnas reutilizable (quienes-somos.html y contacto.html)
+    .two-col-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: $spacing-unit * 2;
+        align-items: start;
     }
 }

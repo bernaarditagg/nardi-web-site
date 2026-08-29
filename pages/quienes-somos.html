@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
@@ -40,23 +41,25 @@
             <p>Nardi es un estudio de marketing digital que combina análisis, estética y estrategia. Creemos que cada marca tiene su propio lenguaje, y que nuestro trabajo es diseñarlo y sostenerlo con consistencia.</p>
         </section>
 
-        <section class="section">
-            <h2>Nuestro enfoque</h2>
-            <p>No solo cuidamos lo visual: lo curamos. Cada color, tipografía e imagen está alineada con la identidad de la marca y con lo que busca transmitir. Nuestro enfoque es sensible pero estratégico, con una mirada entrenada en diseño y tendencias.</p>
-        </section>
+        <div class="two-col-grid">
+            <section class="section" data-aos="fade-up">
+                <h2>Nuestro enfoque</h2>
+                <p>No solo cuidamos lo visual: lo curamos. Cada color, tipografía e imagen está alineada con la identidad de la marca y con lo que busca transmitir. Nuestro enfoque es sensible pero estratégico, con una mirada entrenada en diseño y tendencias.</p>
+            </section>
 
-        <section class="section">
-            <h2>Con quién trabajamos</h2>
-            <p>Sabemos movernos con fluidez entre distintos mundos: desde la arquitectura al wellness, desde la moda al diseño de interiores. Cada marca tiene su voz, su ritmo, su estética, y nosotros creamos estrategias únicas para cada una.</p>
-            <ul class="content-list">
-                <li>Arquitectura y estudios de diseño.</li>
-                <li>Interiorismo y decoración.</li>
-                <li>Moda e indumentaria.</li>
-                <li>Wellness y bienestar.</li>
-            </ul>
-        </section>
+            <section class="section" data-aos="fade-up" data-aos-delay="100">
+                <h2>Con quién trabajamos</h2>
+                <p>Sabemos movernos con fluidez entre distintos mundos: desde la arquitectura al wellness, desde la moda al diseño de interiores. Cada marca tiene su voz, su ritmo, su estética, y nosotros creamos estrategias únicas para cada una.</p>
+                <ul class="content-list">
+                    <li>Arquitectura y estudios de diseño.</li>
+                    <li>Interiorismo y decoración.</li>
+                    <li>Moda e indumentaria.</li>
+                    <li>Wellness y bienestar.</li>
+                </ul>
+            </section>
+        </div>
 
-        <figure class="figure">
+        <figure class="figure" data-aos="fade-up">
             <img class="figure-img" src="../img/nardi-logo.png" alt="Logo de Nardi">
             <figcaption class="figure-caption">El estudio detrás de cada marca que acompañamos.</figcaption>
         </figure>
@@ -71,5 +74,12 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 700,
+            once: true
+        });
+    </script>
 </body>
 </html>

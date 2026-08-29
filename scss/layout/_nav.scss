@@ -23,11 +23,11 @@
 
         &:hover,
         &:focus {
-            color: $color-accent;
+            @extend %hover-accent;
         }
 
         &:active {
-            color: $color-accent-dark;
+            @extend %active-accent-dark;
         }
     }
 }

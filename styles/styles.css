@@ -1,3 +1,11 @@
+.social-link:hover, .social-link:focus, .navbar-nardi .nav-link:hover, .navbar-nardi .nav-link:focus {
+  color: #C1694F;
+}
+
+.social-link:active, .navbar-nardi .nav-link:active {
+  color: #A8563F;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -77,13 +85,6 @@ h2 {
   margin-left: 0.5rem;
   transition: color 0.2s ease;
 }
-.navbar-nardi .nav-link:hover, .navbar-nardi .nav-link:focus {
-  color: #C1694F;
-}
-.navbar-nardi .nav-link:active {
-  color: #A8563F;
-}
-
 .navbar-toggler {
   border-color: rgba(250, 246, 241, 0.4);
 }
@@ -107,6 +108,12 @@ h2 {
 }
 .section-intro h1 {
   font-size: 3rem;
+}
+
+.two-col-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
 .content-list {
@@ -208,6 +215,20 @@ h2 {
   transition: opacity 0.2s ease;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.section-intro {
+  animation: fadeInUp 0.7s ease-out both;
+}
+
 .site-footer {
   background-color: #2C2C2C;
   color: #FAF6F1;
@@ -232,13 +253,6 @@ h2 {
   font-weight: 600;
   transition: color 0.2s ease;
 }
-.social-link:hover, .social-link:focus {
-  color: #C1694F;
-}
-.social-link:active {
-  color: #A8563F;
-}
-
 @media (min-width: 1024px) {
   .site-main--home {
     display: grid;
@@ -267,5 +281,11 @@ h2 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+  }
+  .two-col-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    align-items: start;
   }
 }
